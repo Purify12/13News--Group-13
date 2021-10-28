@@ -76,28 +76,39 @@
         }
     </style>
     <script type="text/javascript">
-        function pindah(url)
-        {
-        window.location = url;
+        function validasi(url){
+            var username = document.forms["myForm"]["username"].value;
+            var password = document.forms["myForm"]["password"].value;
+                if( username == "username" && password == "pass123"){
+                    return window.location = url;
+                }
+                    else if(username =="" || password ==""){
+                        alert("Masukan username dan password Anda");
+                    return false;
+                }
+                    else{
+                    alert("Username atau password yang Anda masukan SALAH");
+                    return false;
+                }
         }
     </script>
 </head>
 
 <body class="single" style="background-color: rgb(197, 183, 157);">
-    <div class="container-fluid py-2 my-2">
-    <form action="action" method="post" style="background-color: white;">
+    <div class="container-fluid col-9 py-2 my-2">
+        <form action="home.html" style="background-color: white;" method="get" id="myForm" onsubmit=" return validasi('home.html')">
         <div class="imgcontainer">
             <div class="col-12 spdp_right py-5"><img src="images/logo.png" alt="img" class="footer_logo" /></div>
         </div>
 
-        <div class="container">
+        <div class="container col-6">
             <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <input type="text" name="username" placeholder="username">
 
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input type="password" name="password" placeholder="pass123">
 
-            <input type="button" class="btn btn-primary" onclick="pindah('home.html')" value="login">
+            <input class="login" type="submit" name="submit" value="login">
         </div>
     </form>
 </div>
