@@ -15,6 +15,7 @@
     <link href="css/owl.theme.default.css" rel="stylesheet" type="text/css"/>
     <link href="css/style_1.css" rel="stylesheet" type="text/css"/>
     <script src="js/modernizr-3.5.0.min.js"></script>
+    <link rel="stylesheet" href="css/news.css">
  
     <script>
         async function getBerita() {
@@ -29,7 +30,7 @@
                 console.log(error);
             }
             }
-            // getUsers();
+            // getBerita();
 
             async function renderUsers() {
             let data = await getBerita();
@@ -65,31 +66,10 @@
 
         renderUsers();
     </script>
-    <style>
-        @media only screen and (max-width: 600px) {
-        .news {
-            min-width: 600px;
-        }
-        .trending, img{
-            max-width: fit-content;
-            margin: 3em;
-        }
-    }
     
-            img{
-                width: 100%;           
-            }
-
-
-        .berita{
-            margin: 4em;
-            padding: 2em;
-            font-weight: bold;
-        }
-    
-    </style>
+    <script src="date.js"></script>
 </head>
-<body class="single" style="background-color: rgb(197, 183, 157);">
+<body class="single">
 <div class="container-fluid fh5co_header_bg">
     
 </div>
@@ -99,11 +79,13 @@
             <div class="col-12 col-md-3 fh5co_padding_menu">
                 <img src="images/logo.png" alt="img" class="fh5co_logo_width"/>
             </div>
-            <div class="col-12 col-md-6 align-self-center fh5co_mediya_right">
-                <p style="text-align: left; font-size: 36px; color: brown;"><b>Bring You More Information</b></p>
+            <div class="judul col-12 col-md-6 align-self-center fh5co_mediya_right">
+                <p style=""><b>Bring You More Information</b></p>
+                <span><div id="date"></div><br>
+                    <div id="time"></div></span>
             </div>
             <div class="col-12 col-md-3 align-self-center fh5co_mediya_right">
-                <a href="index.html" class="btn btn-info btn-lg">
+                <a href="index.html" class="btn btn-info btn-lg color_fff">
                  Log out
               </a>
             </div>
@@ -152,7 +134,7 @@
                 <div id="berita">
                     <script src="headline.js"></script>
                 </div>
-                
+                <div id="pagination"></div>
             </div>
             <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
                 <div>
